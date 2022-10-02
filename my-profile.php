@@ -20,7 +20,7 @@ $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
 $query->execute();
 
-echo '<script>alert("Your profile has been updated")</script>';
+echo '<script>alert("Your profile has been updated successfully")</script>';
 }
 
 ?>
@@ -82,17 +82,17 @@ foreach($results as $result)
 {               ?>  
 
 <div class="form-group">
-<label>Student ID : </label>
+<label>Student ID: </label>
 <?php echo htmlentities($result->StudentId);?>
 </div>
 
 <div class="form-group">
-<label>Reg Date : </label>
+<label>Reg. Date: </label>
 <?php echo htmlentities($result->RegDate);?>
 </div>
 <?php if($result->UpdationDate!=""){?>
 <div class="form-group">
-<label>Last Updation Date : </label>
+<label>Last Updation Date: </label>
 <?php echo htmlentities($result->UpdationDate);?>
 </div>
 <?php } ?>
@@ -109,18 +109,18 @@ foreach($results as $result)
 
 
 <div class="form-group">
-<label>Enter Full Name</label>
+<label>Enter Full Name: </label>
 <input class="form-control" type="text" name="fullanme" value="<?php echo htmlentities($result->FullName);?>" autocomplete="off" required />
 </div>
 
 
 <div class="form-group">
-<label>Mobile Number :</label>
+<label>Mobile Number: </label>
 <input class="form-control" type="text" name="mobileno" maxlength="10" value="<?php echo htmlentities($result->MobileNumber);?>" autocomplete="off" required />
 </div>
                                         
 <div class="form-group">
-<label>Enter Email</label>
+<label>Enter E-mail</label>
 <input class="form-control" type="email" name="email" id="emailid" value="<?php echo htmlentities($result->EmailId);?>"  autocomplete="off" required readonly />
 </div>
 <?php }} ?>
